@@ -1,0 +1,116 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:#EE4D2D;
+    --border-color:#dbdbdb;
+    --grown-from:0.7;
+    --grown-to:1;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%; /* 10px */
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--grown-from));
+    }
+    to{
+        transform: scale(var(--grown-to));
+    }
+
+}
+/* modal-css */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.2s;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    background-color: var(--white-color);
+    z-index: 1;
+    margin: auto;
+    border-radius: 5px;
+    animation: growth linear 0.2s;
+
+}
+/* btn */
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+.btn.btn-normal:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+.btn.btn-normal{
+    margin-right: 8px;
+}
+.btn.btn-primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+/* pagination */
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination-item{
+    margin: 0 6px;
+
+}
+.pagination-item__link{
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    min-width: 40px;
+    height: 30px;
+    color: #939393;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+
+}
+.pagination-item__link-active{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.pagination-item__link-active:hover{
+    background-color: #ed5c3f;
+}
